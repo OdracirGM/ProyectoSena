@@ -2,15 +2,18 @@ package com.jmimportaciones.servicios.web.Entidades;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 import io.micrometer.common.lang.NonNull;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="productos")
 public class Productos {
@@ -40,9 +43,13 @@ public class Productos {
     private Integer stock;
 
     
-    @Column(name="categorias_Id", nullable = false, length = 12)
+     @Column(name="categorias_Id", nullable = false, length = 12)
     @NonNull
     private Integer categorias_Id;
+
+   /*  @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categorias_Id")
+    private Categorias categorias_Id;*/
 
        public Integer getId() {
         return id;
@@ -84,11 +91,11 @@ public class Productos {
         this.stock = stock;
     }
 
-    public int getCategorias_Id() {
+    public Integer getCategorias_Id() {
         return categorias_Id;
     }
 
-    public void setCategorias_Id(int categorias_Id) {
+    public void setCategorias_Id(Integer categorias_Id) {
         this.categorias_Id = categorias_Id;
     }
 

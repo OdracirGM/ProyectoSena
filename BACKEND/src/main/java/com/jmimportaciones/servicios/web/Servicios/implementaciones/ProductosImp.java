@@ -22,8 +22,8 @@ public class ProductosImp implements ProductosInterf{
     }
 
     @Override
-    public Optional<List<Productos>> buscar(String nombre){
-        return repositorio.findByNombreLike(nombre);
+    public Optional<List<Productos>> buscar(String texto){
+        return repositorio.findByNombreLikeOrProveedorLike("%"+texto+"%","%"+texto+"%");
     }
 
     @Override

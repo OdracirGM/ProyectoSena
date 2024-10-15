@@ -222,8 +222,8 @@ function eliminar_producto(){
 function buscar_productos(){
     
     console.log("Ejecutar Buscar Productos");
-    var nombre = $("formBuscar #texto_buscado").val();
-    var data = []; 
+    //var nombre = $("formBuscar #f").val();
+    var data = convertirFormDataAJSON($("#formBuscar"));
     var success = function (response) {
         var items = [];
         $.each(response,function(index, producto){

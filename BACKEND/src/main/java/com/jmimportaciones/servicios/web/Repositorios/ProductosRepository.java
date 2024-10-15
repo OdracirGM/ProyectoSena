@@ -11,6 +11,6 @@ import com.jmimportaciones.servicios.web.Entidades.Productos;
 @SuppressWarnings("unused")
 public interface ProductosRepository extends JpaRepository<Productos, Integer> {
 
-    Optional<List<Productos>> findByNombreLike(String nombre);
+    Optional<List<Productos>> findByNombreLikeOrProveedorLike(String nombre, String Proveedor);
     
 }
