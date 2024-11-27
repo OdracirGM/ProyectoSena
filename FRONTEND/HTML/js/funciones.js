@@ -152,7 +152,7 @@ function nuevo_producto(){
     var data = convertirFormDataAJSON($("#formRegistrar"));
     var success = function (response) {
         alert("El producto fue registrado");
-        window.location.href = "lista.html";
+        window.location.href = "../buscar/lista.html";
        // $("#boton-cerrar").click();
     };
 
